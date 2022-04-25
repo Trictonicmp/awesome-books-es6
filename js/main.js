@@ -1,4 +1,5 @@
 import DisplayBooks from './modules/DisplayBooks.js';
+import { DateTime } from './modules/luxon.js';
 
 const today = document.getElementById('today');
 let display = null;
@@ -6,7 +7,7 @@ let display = null;
 window.onload = () => {
   display = new DisplayBooks();
   display.render();
-  today.textContent = new Date().toString();
+  today.textContent = DateTime.now();
 };
 
 document.forms[0].onsubmit = (event) => {
@@ -37,8 +38,3 @@ pageLinks.forEach((link) => {
     changePage(link.dataset.section);
   };
 });
-
-/* export default removeBook = (bookId) => {
-  display.removeBook(bookId);
-};
- */
