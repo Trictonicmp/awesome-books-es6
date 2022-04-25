@@ -1,0 +1,130 @@
+
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.booklist,
+.form,
+.contact,
+header,
+footer,
+#today {
+  width: calc(100% - 4em);
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+#today {
+  text-align: right;
+  padding: 0.5em 0;
+}
+
+.hidden {
+  display: none;
+}
+
+#books-cont h3 {
+  text-align: center;
+  padding: 0.3em;
+  color: rgb(197, 197, 197);
+}
+
+.booklist h1 {
+  text-align: center;
+  margin: 1em 0;
+}
+
+header ul {
+  display: flex;
+  gap: 2em;
+  align-items: center;
+}
+
+.booklist ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid grey;
+}
+
+.booklist ul li {
+  padding: 0.5em 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.booklist ul li:nth-child(odd) {
+  background-color: #e4e4e4;
+}
+
+button {
+  padding: 0.3em;
+  border: 2px solid grey;
+  box-shadow: 3px 3px 0 grey;
+}
+
+.book-title {
+  font-weight: 700;
+}
+
+.book-title::after,
+.book-title::before {
+  content: "\"";
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin-inline: auto;
+  padding: 2em;
+  gap: 0.5em;
+}
+
+form h2 {
+  text-align: center;
+}
+
+form input {
+  border: 2px solid grey;
+  padding: 0.5em 1em;
+}
+
+form button {
+  align-self: flex-end;
+}
+
+section {
+  padding: 2em 0;
+}
+
+header,
+footer {
+  display: flex;
+  border: 2px solid grey;
+  margin-top: 1em;
+  justify-content: space-between;
+  padding: 0.5em 1em;
+  align-items: center;
+}
+
+header ul li:nth-child(-n+2)::after {
+  content: "|";
+  margin-left: 1em;
+}
+
+header a {
+  text-decoration: none;
+  color: black;
+}
+
+.contact h2 {
+  margin: 1.2em auto;
+  text-align: center;
+}
+
+.contact ul {
+  list-style: disc;
+  margin: 1.2em 2em;
+}
