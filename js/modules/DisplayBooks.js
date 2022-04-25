@@ -1,5 +1,6 @@
-import { Book } from './Book.js';
-export class DisplayBooks {
+import Book from './Book.js';
+
+export default class DisplayBooks {
   books = [];
 
   booksContainer = document.getElementById('books-cont');
@@ -10,8 +11,9 @@ export class DisplayBooks {
     }
   }
 
-  addBook(book) {
-    this.books.push(book);
+  addBook(title, author) {
+    const newBook = new Book(title, author);
+    this.books.push(newBook);
     this.render();
     this.saveBooks();
   }
@@ -29,7 +31,11 @@ export class DisplayBooks {
       return;
     }
     for (let i = 0; i < this.books.length; i += 1) {
-      this.booksContainer.append(this.books[i].createNode());
+      const bookData = this.books[i].createNode();
+      bookData.button.onclick = () => {
+        this.removeBook(this.books[i].id);
+      };
+      this.booksContainer.append(bookData.node);
     }
   }
 

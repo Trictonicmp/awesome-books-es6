@@ -1,5 +1,4 @@
-import { Book } from './modules/Book.js';
-import { DisplayBooks } from './modules/DisplayBooks.js';
+import DisplayBooks from './modules/DisplayBooks.js';
 
 const today = document.getElementById('today');
 let display = null;
@@ -15,8 +14,7 @@ document.forms[0].onsubmit = (event) => {
   const thisForm = event.target;
   const title = thisForm[0].value;
   const author = thisForm[1].value;
-  const newBook = new Book(title, author);
-  display.addBook(newBook);
+  display.addBook(title, author);
   thisForm.reset();
 };
 
@@ -29,7 +27,7 @@ const changePage = (link) => {
       section.classList.add('hidden');
     }
   });
-}
+};
 
 const pageLinks = document.querySelectorAll('[data-section]');
 
@@ -40,8 +38,7 @@ pageLinks.forEach((link) => {
   };
 });
 
-
-export const removeBook = (bookId) => {
+/* export default removeBook = (bookId) => {
   display.removeBook(bookId);
-}
-
+};
+ */

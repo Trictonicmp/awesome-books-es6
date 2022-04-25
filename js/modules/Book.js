@@ -1,6 +1,4 @@
-import { removeBook } from '../main.js';
-
-export class Book {
+export default class Book {
   id = new Date().getMilliseconds();
 
   constructor(title, author, id = null) {
@@ -19,12 +17,11 @@ export class Book {
     const button = document.createElement('button');
     button.type = 'button';
     button.innerText = 'Remove';
-    button.onclick = () => {
-      removeBook(this.id);
-    }
+    button.classList.add('book-button');
+    button.setAttribute('element-id', this.id);
 
     node.append(button);
 
-    return node;
+    return { node, button };
   }
 }
